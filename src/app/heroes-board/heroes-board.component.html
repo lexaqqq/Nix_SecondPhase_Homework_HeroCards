@@ -1,0 +1,14 @@
+<div class="heroes-menu">
+  <a *ngFor="let hero of heroes" (click)="openModal('custom-modal-2')" (click)="onSelect(hero)">
+  {{hero.name}}
+</a>
+</div>
+  <app-modal id="custom-modal-2">
+    <div style="height:100%" *ngIf="selectedHero">
+      <h1 class="title">{{selectedHero.name}}</h1>
+      <img src="{{selectedHero.img}}" alt="" class="hero-img">
+      <p class="about">{{selectedHero.about}}</p>
+      <button (click)="closeModal('custom-modal-2')" class="btn">Close</button>
+      <button (click)="onDelete(selectedHero)" class="btn">Delete</button>
+  </div>
+  </app-modal>
